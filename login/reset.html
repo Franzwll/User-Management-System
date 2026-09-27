@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password — User Management System</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div class="login-bg"></div>
+    <div style="position: absolute; top: 20px; right: 28px; z-index: 10;">
+        <button class="theme-toggle" type="button" data-role="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color mode" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface2); color: var(--text-mid); cursor: pointer; transition: 0.2s; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></button>
+    </div>
+    <div class="login-wrap">
+        <div class="login-card">
+            <div class="login-brand" style="flex-direction: column; text-align: center;">
+                <img src="../assets/images/badge_2.png" alt="System Logo" style="width: 250px; margin-top: -35px; margin-bottom: -22px; transform: scale(1.3); filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));" />
+                <span class="logo-txt">User <span>Management</span></span>
+            </div>
+
+            <div id="reset-step" class="login-step show">
+                <h1 class="login-title">Set new password</h1>
+                <p class="login-sub">Enter your new password below to regain access</p>
+                <form id="form-reset" class="login-form" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="reset-token">Recovery Code</label>
+                        <input type="text" id="reset-token" class="form-input" placeholder="e.g. 5A9B2C8D" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="new-password">New Password</label>
+                        <input type="password" id="new-password" class="form-input" placeholder="••••••••" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" class="form-input" placeholder="••••••••" required />
+                    </div>
+                    <button type="submit" class="btn-submit" id="btn-reset">
+                        <span class="btn-text">Update password</span>
+                        <span class="btn-loader" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="success-step" class="login-step">
+                <h1 class="login-title">Password updated</h1>
+                <p class="login-sub">Your password has been changed successfully. You can now sign in with your new password.</p>
+                <a href="index.html" class="btn-submit" style="display:block; text-align:center; text-decoration:none; color:#0a1a12;">Back to sign in</a>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span id="toast-msg"></span>
+    </div>
+    <script src="reset_script.js"></script>
+</body>
+
+</html>

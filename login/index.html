@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — User Management System</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <div class="login-bg"></div>
+  <div style="position: absolute; top: 20px; right: 28px; z-index: 10;">
+    <button class="theme-toggle" type="button" data-role="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color mode" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface2); color: var(--text-mid); cursor: pointer; transition: 0.2s; font-size: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></button>
+  </div>
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-brand" style="flex-direction: column; text-align: center;">
+        <img src="../assets/images/badge_2.png" alt="System Logo" style="width: 250px; margin-top: -35px; margin-bottom: -22px; transform: scale(1.3); filter: drop-shadow(0 2px 5px rgba(0,0,0,0.15));" />
+        <span class="logo-txt">User <span>Management</span></span>
+      </div>
+
+      <!-- Step 1: Email + Password -->
+      <div id="step-1" class="login-step show">
+        <h1 class="login-title">Sign in</h1>
+        <p class="login-sub">Enter your credentials to continue</p>
+        <form id="form-credentials" class="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email</label>
+            <input type="email" id="login-email" class="form-input" placeholder="you@university.edu"
+              autocomplete="email" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="password-input-wrap">
+              <input type="password" id="login-password" class="form-input" placeholder="••••••••"
+                autocomplete="current-password" required />
+              <button type="button" class="btn-toggle-pass" id="btn-toggle-pass" title="Toggle password visibility">
+                <svg class="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-options">
+            <label class="form-check">
+              <input type="checkbox" id="login-remember" class="form-check-input" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="form-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-submit" id="btn-continue">
+            <span class="btn-text">Continue</span>
+            <span class="btn-loader" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Step 2: OTP verification -->
+      <div id="step-2" class="login-step">
+        <h1 class="login-title">Verify your identity</h1>
+        <p class="login-sub">We sent a 6-digit code to <strong id="otp-email-display"></strong></p>
+        <form id="form-otp" class="login-form" novalidate>
+          <div class="form-group otp-group">
+            <label class="form-label" for="otp-input">Verification code</label>
+            <div class="otp-inputs" id="otp-inputs">
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="0"
+                aria-label="Digit 1" />
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="1"
+                aria-label="Digit 2" />
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="2"
+                aria-label="Digit 3" />
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="3"
+                aria-label="Digit 4" />
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="4"
+                aria-label="Digit 5" />
+              <input type="text" inputmode="numeric" maxlength="1" class="otp-digit" data-idx="5"
+                aria-label="Digit 6" />
+            </div>
+            <input type="hidden" id="otp-input" name="otp" value="" />
+          </div>
+          <p class="otp-resend">
+            Didn't receive the code? <button type="button" class="link-btn" id="btn-resend" disabled>Resend in <span
+                id="resend-countdown">60</span>s</button>
+          </p>
+          <button type="submit" class="btn-submit" id="btn-verify" disabled>
+            <span class="btn-text">Verify & sign in</span>
+            <span class="btn-loader" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn-back" id="btn-back">← Back to sign in</button>
+        </form>
+      </div>
+
+      <!-- Step 3: Forgot password -->
+      <div id="step-forgot" class="login-step">
+        <h1 class="login-title">Reset password</h1>
+        <p class="login-sub">Enter your email and we'll send you a recovery link</p>
+        <form id="form-forgot" class="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="forgot-email">Email</label>
+            <input type="email" id="forgot-email" class="form-input" placeholder="you@university.edu"
+              autocomplete="email" required />
+          </div>
+          <button type="submit" class="btn-submit" id="btn-forgot">
+            <span class="btn-text">Send recovery link</span>
+            <span class="btn-loader" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn-back" id="btn-back-forgot">← Back to sign in</button>
+        </form>
+      </div>
+
+      <p class="login-footer">By signing in you agree to the terms of use and privacy policy.</p>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span id="toast-msg"></span>
+  </div>
+  <!-- Supabase Library & Init -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>window.SUPABASE_CONFIG_PATH = '../backend/get_supabase_config.php';</script>
+  <script src="../js/supabase_init.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
