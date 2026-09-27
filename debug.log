@@ -1,0 +1,24 @@
+[INIT] Debug log started at <?php echo date('Y-m-d H:i:s'); ?>\n
+[2026-03-26 22:53:11] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=5432;dbname=postgres;sslmode=require
+[2026-03-26 22:53:42] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-26 22:55:22] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 22:55:53] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-26 23:04:04] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:11:45] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:12:15] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-26 23:15:18] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:15:48] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-26 23:20:58] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:21:28] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-26 23:31:41] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:37:32] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:50:56] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:53:56] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:55:46] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:56:56] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-26 23:58:48] Connection failed: SQLSTATE[08006] [7] timeout expired
+[2026-03-27 00:00:01] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-27 00:21:53] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-27 00:24:23] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-27 00:25:50] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
+[2026-03-27 00:27:02] Attempting connection to pgsql:host=aws-1-ap-south-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require
